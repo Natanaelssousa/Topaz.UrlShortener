@@ -1,0 +1,7 @@
+﻿POST https://localhost:7194/api/links
+Content-Type: application/json
+
+{
+  "originalUrl": "isso-nao-e-uma-url",
+  "alias": null
+}

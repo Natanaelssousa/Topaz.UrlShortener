@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36429.23 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topaz.UrlShortener", "Topaz.UrlShortener\Topaz.UrlShortener.csproj", "{A4D147CC-B1E2-462B-A6F8-5A5278240D96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topaz.UrlShortener.Tests", "Topaz.UrlShortener.Tests\Topaz.UrlShortener.Tests.csproj", "{7C598650-E053-427B-A5FC-4B05A5620252}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A4D147CC-B1E2-462B-A6F8-5A5278240D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D147CC-B1E2-462B-A6F8-5A5278240D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D147CC-B1E2-462B-A6F8-5A5278240D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C598650-E053-427B-A5FC-4B05A5620252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C598650-E053-427B-A5FC-4B05A5620252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C598650-E053-427B-A5FC-4B05A5620252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C598650-E053-427B-A5FC-4B05A5620252}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

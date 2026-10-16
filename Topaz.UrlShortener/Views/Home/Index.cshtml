@@ -1,8 +1,96 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Encurtador de URLs";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+        <h1 class="mb-3">Encurtador de URLs</h1>
+
+        <p class="text-muted">
+            Informe uma URL e personalize o link com um alias,
+            ou deixe o código ser gerado automaticamente.
+        </p>
+
+        <form id="shorten-form"
+              data-api-url="@Url.Content("~/api/links")">
+
+            <div class="mb-3">
+                <label for="original-url" class="form-label">
+                    URL original
+                </label>
+
+                <input id="original-url"
+                       name="originalUrl"
+                       type="url"
+                       class="form-control"
+                       placeholder="https://www.exemplo.com"
+                       required />
+
+                <div class="form-text">
+                    Informe o endereço completo com http:// ou https://.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="alias" class="form-label">
+                    Alias (opcional)
+                </label>
+
+                <input id="alias"
+                       name="alias"
+                       type="text"
+                       class="form-control"
+                       placeholder="Exemplo: meu-link"
+                       minlength="3"
+                       maxlength="30"
+                       pattern="[A-Za-z0-9_-]{3,30}"
+                       aria-describedby="alias-help" />
+
+                <div id="alias-help" class="form-text">
+                    Use de 3 a 30 caracteres: letras sem acentos,
+                    números, hífen ou sublinhado.
+                </div>
+            </div>
+
+            <button id="generate-button"
+                    type="submit"
+                    class="btn btn-primary w-100">
+                Gerar link curto
+            </button>
+        </form>
+
+        <div id="message"
+             class="alert alert-danger mt-3"
+             role="alert"
+             hidden>
+        </div>
+
+        <section id="result"
+                 class="alert alert-success mt-4"
+                 aria-live="polite"
+                 hidden>
+
+            <h2 class="h5">Link criado!</h2>
+
+            <a id="short-url"
+               class="d-block text-break"
+               target="_blank"
+               rel="noopener noreferrer">
+            </a>
+
+            <button id="copy-button"
+                    type="button"
+                    class="btn btn-outline-success mt-3">
+                Copiar link
+            </button>
+
+            <p id="copy-message"
+               class="small mt-2 mb-0"
+               role="status">
+            </p>
+        </section>
+    </div>
 </div>
+@section Scripts {
+    <script src="~/js/shortener.js" asp-append-version="true"></script>
+}
