@@ -232,7 +232,20 @@ O projeto mantém o redirecionamento para HTTPS do template. Para a apresentaç�
 
 Para diagnosticar falhas de inicialização, consulte o Visualizador de Eventos do Windows e os logs do ASP.NET Core Module, habilitando logs adicionais temporariamente quando necessário.
 
-**Status da validação:** os testes automatizados e os fluxos manuais descritos acima foram executados em desenvolvimento. A validação da publicação no IIS local ainda está pendente.
+**Status da validação:** 14 casos de teste NUnit executados com
+sucesso. Aplicação publicada e validada no IIS local, com pool
+configurado como “Sem Código Gerenciado”, acesso HTTP na porta
+8085 e HTTPS na porta 8443, utilizando certificado de desenvolvimento
+para localhost.
+
+Foram confirmados: criação com alias, geração automática, conflito
+de alias, rejeição de URL inválida, redirecionamento e cópia do link.
+No IIS, foram validados criação, redirecionamento e conflito via HTTP,
+além de criação, redirecionamento e cópia via HTTPS, com a execução
+do Visual Studio parada.
+
+Endereço utilizado na apresentação local: https://localhost:8443.
+Esse endereço está disponível somente no computador configurado.
 
 Referência: [Hospedar ASP.NET Core no IIS — Microsoft Learn](https://learn.microsoft.com/aspnet/core/host-and-deploy/iis/?view=aspnetcore-8.0).
 
